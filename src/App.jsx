@@ -1,7 +1,8 @@
+// App.jsx
 import { useState } from "react";
 import {
   Menu, Search, Home, GraduationCap, Landmark, Trophy,
-  CheckSquare, MapPin, ChevronRight
+  CheckSquare, MapPin, ChevronRight, Eye, EyeOff, CheckCircle
 } from "lucide-react";
 
 // ─── Navigation Data ───────────────────────────────────────────────────────────
@@ -97,6 +98,7 @@ function Header({ setActivePage }) {
             <button onClick={() => setActivePage("campuses")} className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md transition">Campuses</button>
             <button onClick={() => setActivePage("studentSupport")} className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md transition">Student Support</button>
             <button onClick={() => setActivePage("contact")} className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md transition">Contact us</button>
+            <button onClick={() => setActivePage("studentPortal")} className="bg-gray-800 text-white hover:bg-gray-900 px-4 py-2 rounded-md transition">Student Portal</button>
           </nav>
         </div>
         <div className="flex items-center gap-3">
@@ -117,8 +119,10 @@ function HomePage({ setActivePage }) {
         <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="bg-gray-300/90 max-w-xl p-8 rounded-xl shadow-lg">
             <h1 className="text-3xl font-bold mb-3">Vision 2030 Finalist</h1>
-            <p className="text-base leading-7 text-gray-700 mb-2">Short text about being the finalist</p>
-            <p className="text-base leading-7 text-gray-700">(something positive the institute achieved)</p>
+            <p className="text-base leading-7 text-gray-700 mb-2"></p>
+            <p className="text-base leading-7 text-gray-700">Maluti TVET College announced as a Vision 2030 Awards Finalist
+
+The Inaugural Vision 2030 Awards has announced its 2017 awards category finalists – and Maluti has been designated a finalist for the Driver for Change Award.</p>
             <button onClick={() => setActivePage("about")} className="mt-6 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition text-sm">
               Learn More
             </button>
@@ -223,8 +227,16 @@ function CollegeOverviewTab({ setActivePage }) {
     <section className="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-10 items-start">
       <div className="bg-gray-300 rounded-xl min-h-[420px] p-6 shadow-md">
         <h3 className="text-xl font-semibold mb-4">College overview</h3>
-        <p className="text-gray-700 leading-8 text-sm">(Overview text)</p>
-        <p className="mt-4 text-gray-700 leading-8 text-sm">Maluti TVET College is dedicated to providing accessible, high-quality vocational and occupational education that responds to the needs of the economy and society.</p>
+        <p className="text-gray-700 leading-8 text-sm"></p>
+        <p className="mt-4 text-gray-700 leading-8 text-sm">Maluti TVET College is a Technical Vocational Education & Training Institution operating under the auspices of the Department of Higher Education and Training. The College is accredited by Umalusi and several Sector Education and Training Authorities (SETAs)
+
+The Department of Higher Education and Training was formally established by law in terms of the Presidential Minute No.690 of 06 July 2009 and under Proclamation No.44 of 01 July 2009, the concurrent functions under the FET Colleges Act, 2008 were transferred to the Minister of Higher Education & Training.
+
+The Department of Higher Education & Training comprises of Public TVET Colleges, Public Universities, National Institutes of Higher Education, Trade Testing Centres, Skills Development Institutes and SETAs.
+
+The mandate of the 50 public TVET Colleges is to steadily increase the number of students enrolled and trained in priority and critical skills areas putting FET Colleges at the centre of skills development challenge in South Africa.
+
+The specific focus of public TVET Colleges is to address the skills shortages in South Africa; by offering relevant and responsive vocational and occupational programmes</p>
         <p className="mt-4 text-gray-700 leading-8 text-sm">The college offers programmes in engineering, business studies, information technology, hospitality, and other technical fields.</p>
       </div>
       <div className="bg-gray-200 rounded-xl min-h-[420px] p-6 shadow-md flex flex-col items-center justify-center text-center">
@@ -245,7 +257,9 @@ function HistoryTab({ setActivePage }) {
       <div className="bg-gray-300 rounded-xl p-8 shadow-md max-w-lg w-full min-h-[300px]">
         <h3 className="text-xl font-semibold mb-2">Where it all began...</h3>
         <p className="text-sm text-gray-600 mb-2">College history</p>
-        <p className="text-sm text-gray-600">(add text about the college history)</p>
+        <p className="text-sm text-gray-600">Maluti Technical Vocational Education and Training College was established on the 1st of September 2002.
+Maluti TVET College is a Technical Vocational Education & Training Institution operating under the auspices of the Department of Higher Education and Training. The College is accredited by Umalusi and several Sector Education and Training Authorities (SETAs)
+Member of the Executive Council (MEC) for Free State Department of Education (FSDoE) merged the former Colleges of Education (Bonamelo, Sefikeng ) and Technical Colleges (Itemoheleng, Bethlehem, Kwetlisong and Lere la Tshepe) to form one Maluti Technical Vocational Education & Training College.</p>
       </div>
     </section>
   );
@@ -258,15 +272,27 @@ function VisionTab({ setActivePage }) {
         <div className="space-y-8">
           <div>
             <span className="bg-gray-300 px-4 py-2 rounded-md text-sm font-semibold inline-block mb-3">Vision</span>
-            <p className="text-gray-700 text-sm leading-7">Colleges vision</p>
+            <p className="text-gray-700 text-sm leading-7">To provide excellence, innovation and success that inspires entrepreneurship and employability to transform lives.</p>
           </div>
           <div>
             <span className="bg-gray-300 px-4 py-2 rounded-md text-sm font-semibold inline-block mb-3">Mission</span>
-            <p className="text-gray-700 text-sm leading-7">Colleges mission and strategic goals</p>
+            <p className="text-gray-700 text-sm leading-7">Offer relevant and responsive areas of learning, knowledge and skills
+Provide world class programme in partnership with institutions of excellence nationally and internationally.
+Sustain public confidence in Maluti TVET College.
+Maintain a world class culture of teaching and learning.
+Provide opportunities for lifelong learning.</p>
           </div>
           <div>
             <span className="bg-gray-300 px-4 py-2 rounded-md text-sm font-semibold inline-block mb-3">Values</span>
-            <p className="text-gray-700 text-sm leading-7">Colleges corporate values</p>
+            <p className="text-gray-700 text-sm leading-7">At Maluti TVET College we are guided by the following Values which are important to us as an organisation
+Integrity – Uprightness and sincere
+Accountability – responsible for our actions
+Innovation – in the forefront of developments
+Professionalism – the way we conduct ourselves
+Transparency – openness in all our operations
+Redress – upliftment of previously disadvantaged individuals
+Inclusiveness – no discrimination
+Sustainability –  meet the needs of the present without diminishing future opportunities</p>
           </div>
         </div>
       </CheckerBg>
@@ -657,6 +683,331 @@ function ApplicationPage({ setActivePage }) {
   );
 }
 
+// ─── Student Portal Login Page ────────────────────────────────────────────────────
+function StudentPortalPage({ setActivePage }) {
+  const [studentNumber, setStudentNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (!studentNumber || !password) {
+      setError("Please enter both student number and password");
+      return;
+    }
+    setError("");
+    // Handle login logic here
+    alert("Login functionality would be implemented here");
+  };
+
+  return (
+    <div>
+      <Header setActivePage={setActivePage} />
+      <CheckerBg className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12">
+        <div className="max-w-md w-full mx-4">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-gray-800 text-white px-6 py-5">
+              <h1 className="text-2xl font-bold">Maluti TVET College</h1>
+              <p className="text-gray-300 text-sm mt-1">Student Portal</p>
+            </div>
+            
+            <div className="p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-xl font-semibold text-gray-800">Welcome back</h2>
+                <p className="text-gray-500 text-sm mt-1">Sign in to access your student dashboard</p>
+              </div>
+
+              {error && (
+                <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
+
+              <form onSubmit={handleLogin}>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Student Number</label>
+                  <input
+                    type="text"
+                    value={studentNumber}
+                    onChange={(e) => setStudentNumber(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition"
+                    placeholder="Enter your student number"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition pr-10"
+                      placeholder="Enter your password"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    >
+                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between mb-6">
+                  <label className="flex items-center gap-2 text-sm text-gray-600">
+                    <input
+                      type="checkbox"
+                      checked={rememberMe}
+                      onChange={(e) => setRememberMe(e.target.checked)}
+                      className="rounded border-gray-300 text-gray-600 focus:ring-gray-400"
+                    />
+                    Remember me
+                  </label>
+                  <button type="button" className="text-sm text-gray-600 hover:text-gray-800 transition">
+                    Forgot password?
+                  </button>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gray-800 text-white py-2.5 rounded-lg font-medium hover:bg-gray-900 transition"
+                >
+                  Login
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-600">
+                  Don't have an account?{" "}
+                  <button
+                    onClick={() => setActivePage("signUp")}
+                    className="text-gray-800 font-semibold hover:underline"
+                  >
+                    Sign up
+                  </button>
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+                <p className="text-xs text-gray-500">
+                  Need help?{" "}
+                  <button onClick={() => setActivePage("contact")} className="text-gray-700 hover:underline">
+                    Contact student support
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CheckerBg>
+      <Footer />
+    </div>
+  );
+}
+
+// ─── Sign Up Page ────────────────────────────────────────────────────────────────
+function SignUpPage({ setActivePage }) {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    studentNumber: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
+    if (!formData.studentNumber.trim()) newErrors.studentNumber = "Student number is required";
+    if (!formData.email.trim()) newErrors.email = "Email address is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    else if (formData.password.length < 6) newErrors.password = "Password must be at least 6 characters";
+    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+    if (!agreeTerms) newErrors.terms = "You must agree to the terms & conditions";
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Handle sign up logic here
+      alert("Account created successfully! Would navigate to portal login.");
+      setActivePage("studentPortal");
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: "" }));
+  };
+
+  return (
+    <div>
+      <Header setActivePage={setActivePage} />
+      <CheckerBg className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12">
+        <div className="max-w-md w-full mx-4">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-gray-800 text-white px-6 py-5">
+              <h1 className="text-2xl font-bold">Maluti TVET College</h1>
+              <p className="text-gray-300 text-sm mt-1">Create Student Account</p>
+            </div>
+            
+            <div className="p-6">
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition ${errors.fullName ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Enter your full name"
+                  />
+                  {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Student Number</label>
+                  <input
+                    type="text"
+                    name="studentNumber"
+                    value={formData.studentNumber}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition ${errors.studentNumber ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Enter your student number"
+                  />
+                  {errors.studentNumber && <p className="text-red-500 text-xs mt-1">{errors.studentNumber}</p>}
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Enter your email address"
+                  />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Enter your phone number"
+                  />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition pr-10 ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
+                      placeholder="Create a password"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    >
+                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                  {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                  <div className="relative">
+                    <input
+                      type={showConfirmPassword ? "text" : "password"}
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent outline-none transition pr-10 ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'}`}
+                      placeholder="Confirm your password"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    >
+                      {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                  {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
+                </div>
+
+                <div className="mb-6">
+                  <label className="flex items-center gap-2 text-sm text-gray-600">
+                    <input
+                      type="checkbox"
+                      checked={agreeTerms}
+                      onChange={(e) => {
+                        setAgreeTerms(e.target.checked);
+                        if (errors.terms) setErrors(prev => ({ ...prev, terms: "" }));
+                      }}
+                      className="rounded border-gray-300 text-gray-600 focus:ring-gray-400"
+                    />
+                    I agree to the{" "}
+                    <button type="button" className="text-gray-800 font-semibold hover:underline">
+                      terms & conditions
+                    </button>
+                  </label>
+                  {errors.terms && <p className="text-red-500 text-xs mt-1">{errors.terms}</p>}
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gray-800 text-white py-2.5 rounded-lg font-medium hover:bg-gray-900 transition"
+                >
+                  Create Account
+                </button>
+              </form>
+
+              <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+                <p className="text-xs text-gray-500">
+                  Need help?{" "}
+                  <button onClick={() => setActivePage("contact")} className="text-gray-700 hover:underline">
+                    Contact student support
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CheckerBg>
+      <Footer />
+    </div>
+  );
+}
+
 // ─── App Root ────────────────────────────────────────────────────────────────────
 export default function App() {
   const [activePage, setActivePage] = useState("home");
@@ -671,6 +1022,8 @@ export default function App() {
       case "studentSupport":return <StudentSupportPage setActivePage={setActivePage} />;
       case "studentFinance":return <StudentFinancePage setActivePage={setActivePage} />;
       case "contact":       return <ContactPage setActivePage={setActivePage} />;
+      case "studentPortal": return <StudentPortalPage setActivePage={setActivePage} />;
+      case "signUp":        return <SignUpPage setActivePage={setActivePage} />;
       default:              return <HomePage setActivePage={setActivePage} />;
     }
   };
